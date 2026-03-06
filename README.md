@@ -1,4 +1,4 @@
-***HackerRank Artificial Intelligence Solutions***
+**HackerRank Artificial Intelligence Solutions**
 
 This repository contains my solutions to problems from the Artificial Intelligence track on HackerRank. The goal of this project is to strengthen my understanding of core AI and machine learning concepts through hands-on problem solving.
 
