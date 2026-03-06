@@ -1,45 +1,33 @@
-'''
-Problem frame: 
-Physics: independent variable <- x 
-History: <- y
+# x is independent variable
+# y is target -> y_pred = m.x + b
+x =[int(x) for x in "15  12  8   8   7   7   7   6   5   3".split()]
+y =[int(x) for x in "10  25  17  11  13  17  20  13  9   15".split()]
 
-y = w0 + w1.x
+# Initialize slope and intercept 
+m, b = 0, 0
 
-result: integer, round to 3 decimal places
+# Initilialize learning rate 
+n = 0.0001
 
-Solution:
-n: number of data point
-xi: each physics data point
-x bar: average score of physics - sum of all xi over n 
-yi: each history data point
-y bar: average score of history - sum of all yi over n
+training = True 
 
-Step by step:
-- Obtaining and storing the physics scores and historical score from the user
-- Calculate the x bar and y bar. 
-- Calculate m, use for loop
-'''
-
-# Get data from the user
-x = list(map(int, input().split()[2:])) # x = [15, 12, ...]
-y = list(map(int, input().split()[2:]))
-
-# The number of students
-n = len(x)
-
-# Compute x bar and y bar
-x_bar = sum(x) / n
-y_bar = sum(y) / n
-
-# Initialize numerator and denominator of m's equation
-numerator = 0
-denominator = 0
-
-# Calculate m using the formula: m = sum((xi - x_bar) * (yi - y_bar)) / sum((xi - x_bar) ** 2)
-for i in range(n):
-    numerator += (x[i] - x_bar) * (y[i] - y_bar)
-    denominator += (x[i] - x_bar) ** 2
+# m += dm 
+# b += db
+while training:
+    dm = 0
+    db = 0
+    # The cost function equals to true value - predicted value
+    # Predicted value: y_pred = m.x + b
+    for i in range(len(x)):
+        dm += (y[i] - (m * x[i] + b)) * x[i]
+        db += y[i] - (m * x[i] + b)
+        
+    # Gradient descent: update b and m
+    b += n * db
+    m += n * dm
     
-m = round(numerator / denominator, 3)
-
-print(m)
+    # Stop training when dm and db doesn't change much
+    if abs(dm) < 1e-6 and abs(db) < 1e-6:
+        training = False
+        
+print(round(m, 3))
