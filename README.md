@@ -4,14 +4,14 @@ This repository contains my solutions to problems from the Artificial Intelligen
 
 The solutions focus on topics such as:
 
-Statistics and probability
+- Statistics and probability
 
-Correlation and regression
+- Correlation and regression
 
-Machine learning fundamentals
+- Machine learning fundamentals
 
-Optimization methods
+- Optimization methods
 
-Data analysis techniques used in AI systems
+- Data analysis techniques used in AI systems
 
 Each solution is implemented in Python, with an emphasis on writing clear, readable code and understanding the underlying mathematical concepts rather than relying solely on external libraries.
