@@ -16,7 +16,7 @@ training = True
 while training:
     dm = 0
     db = 0
-    # The cost function equals to true value - predicted value
+    # The error of each data point equals to true value - predicted value
     # Predicted value: y_pred = m.x + b
     for i in range(len(x)):
         dm += (y[i] - (m * x[i] + b)) * x[i]
