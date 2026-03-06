@@ -1,5 +1,3 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-
 '''
 Problem frame: 
 Physics: independent variable <- x 
@@ -21,6 +19,7 @@ Step by step:
 - Calculate the x bar and y bar. 
 - Calculate m, use for loop
 '''
+
 # Get data from the user
 x = list(map(int, input().split()[2:])) # x = [15, 12, ...]
 y = list(map(int, input().split()[2:]))
